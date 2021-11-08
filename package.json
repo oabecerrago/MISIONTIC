@@ -1,0 +1,11 @@
+{
+  "name": "personalbd",
+  "version": "1.0.0",
+  "description": "reto crud api rest",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "oabecerrago",
+  "license": "ISC"
+}
