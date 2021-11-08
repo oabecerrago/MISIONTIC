@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 let PersonaSchema = new mongoose.Schema({
     idPersona: Number,
+    tipo_documentoPersona: String,
     documento_de_identificacionPersona: String,
     nombresPersona: String,
     apellidosPersona: String,
