@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const PersonaSchema = require("./PersonalDB/Persona.js"); 
 
 const app = express();
-const mongoose = require('mongoose');
 const router = require('express');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -46,3 +45,4 @@ app.use(router);
 app.listen(3000, () => {
     console.log("Servidor corriendo desde el puerto 3000")
 });
+
