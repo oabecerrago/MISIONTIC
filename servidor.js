@@ -1,10 +1,12 @@
 // console.log("hola mundo")
 
 const express = require('express');
+const app = express();
+
 const mongoose = require('mongoose');
 const PersonaSchema = require("./PersonalDB/Persona.js"); 
 
-const app = express();
+
 const router = require('express');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -13,10 +15,20 @@ app.use(express.json());
 mongoose.connect("mongodb+srv://dbUsuario:progweb2022@oabecerrago.9glnc.mongodb.net/dbUsuario?retryWrites=true&w=majority");
 
 
-//operaciones crud
+//operaciones CRUD
 
 router.get('/', (req, res) =>{
     res.send("inicio de mi API");
+})
+
+router.get('/Persona', (req, res)=>{
+    PersonaSchema.find(function(err, datos){
+        if(err){
+            console.log("Error leyendo datos persona");
+        }else{
+            res.send(datos);
+        }
+    })
 })
 
 router.post('/persona', (req, res) =>{

@@ -14,4 +14,4 @@ let PersonaSchema = new mongoose.Schema({
 
 });
 
-module.exports = mongoose.model('persona', PersonaSchema, 'Tareas');
+module.exports = mongoose.model('persona', PersonaSchema, 'Personas');
