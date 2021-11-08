@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 //conexion a base de datos
-mongoose.connect("mongodb+srv://dbUsuario:progweb2022@oabecerrago.9glnc.mongodb.net/dbUsuario?retryWrites=true&w=majority");
+mongoose.connect("mongodb+srv://dbUsuario:progweb2022@oabecerrago.9glnc.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 
 //operaciones CRUD
 router.get('/', (req, res) =>{
