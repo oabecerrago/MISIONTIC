@@ -30,6 +30,18 @@ router.get('/Persona', (req, res)=>{
     })
 })
 
+router.put('/Persona', (req, res)=>{
+    PersonaSchema.find(function(err, datos){
+        if(err){
+            console.log("No se actualizaron los datos de persona");
+        }else{
+            console.log("Datos actualizados correctamente");;
+        }
+    })
+})
+
+
+
 router.post('/persona', (req, res) =>{
     let nuevaPersona = new PersonaSchema({
         idPersona: req.body.id,
