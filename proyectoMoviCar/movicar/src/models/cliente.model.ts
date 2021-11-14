@@ -21,6 +21,10 @@ export class Cliente extends Entity {
   })
   urlBanco: string;
 
+  @property({
+    type: 'string',
+  })
+  solicitudId?: string;
 
   constructor(data?: Partial<Cliente>) {
     super(data);

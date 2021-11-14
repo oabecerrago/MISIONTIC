@@ -1,4 +1,9 @@
-import {Entity, model, property} from '@loopback/repository';
+import {Entity, model, property, hasOne, hasMany} from '@loopback/repository';
+import {Login} from './login.model';
+import {Administrador} from './administrador.model';
+import {Notificacion} from './notificacion.model';
+import {Asesor} from './asesor.model';
+import {Cliente} from './cliente.model';
 
 @model()
 export class Usuario extends Entity {
@@ -63,6 +68,20 @@ export class Usuario extends Entity {
   })
   ciudad: string;
 
+  @hasOne(() => Login, {keyTo: 'idUsuario'})
+  login: Login;
+
+  @hasOne(() => Administrador, {keyTo: 'idUsuario'})
+  administrador: Administrador;
+
+  @hasMany(() => Notificacion, {keyTo: 'idUsuario'})
+  notificacions: Notificacion[];
+
+  @hasOne(() => Asesor, {keyTo: 'idUsuario'})
+  asesor: Asesor;
+
+  @hasOne(() => Cliente, {keyTo: 'idUsuario'})
+  cliente: Cliente;
 
   constructor(data?: Partial<Usuario>) {
     super(data);
